@@ -5,49 +5,61 @@ import java.util.List;
 
 /**
  * Response Model For Charging Station Details with respect to the ID.
+ * 
  * @author yeshwanth.l
  *
  */
-public class StationIdResponse implements Serializable{
+public class StationIdResponse implements Serializable {
+
+	public StationIdResponse(StationInfo stationInfo, double distance, String image, List<String> features,
+			TariffDeails tariffDetails, List<String> paymentOptions) {
+		super();
+		this.stationInfo = stationInfo;
+		this.distance = distance;
+		this.image = image;
+		this.features = features;
+		this.tariffDetails = tariffDetails;
+		this.paymentOptions = paymentOptions;
+	}
+	
+	public StationIdResponse() {
+		super();
+	}
 
 	/**
-	 * serial version default ID.
-	 * TO-DO Change Later.
+	 * serial version default ID. TO-DO Change Later.
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	/**
 	 * Charging Station Information.
 	 */
 	private StationInfo stationInfo;
-	
+
 	/**
-	 * Distace of charging station with respect to the origin.
+	 * Distance of charging station with respect to the origin.
 	 */
 	private double distance;
-	
+
 	/**
 	 * Charging station image URL.
 	 */
 	private String image;
-	
+
 	/**
 	 * Available charging station features.
 	 */
 	private List<String> features;
-	
+
 	/**
 	 * Tariff details with respect to the charging station.
 	 */
 	private TariffDeails tariffDetails;
-	
+
 	/**
 	 * Payment options available.
 	 */
 	private List<String> paymentOptions;
-	
-	
-	
 
 	public StationInfo getStationInfo() {
 		return stationInfo;
@@ -97,10 +109,4 @@ public class StationIdResponse implements Serializable{
 		this.paymentOptions = paymentOptions;
 	}
 
-	
-	
-
 }
-
-
-	 

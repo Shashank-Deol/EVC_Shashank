@@ -15,7 +15,7 @@ import com.evc.service.ChargingStationServiceImpl;
 @RestController
 public class ChargingStationController {
 
-//	"http://172.16.17.30:8066/stations?startingLatitude="+15.2345+"&startingLongitude="+23.3432+"&radius=5&chargerType=1timeStamp=2008-09-15T15:53:00+05:00"
+//"http://172.16.17.30:8066/stations?startingLatitude="+15.2345+"&startingLongitude="+23.3432+"&radius=5&chargerType=1timeStamp=2008-09-15T15:53:00+05:00"
 
 	@Autowired
 	ChargingStationServiceImpl serviceObject;

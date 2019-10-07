@@ -37,7 +37,8 @@ public class DaoDemo {
 
 			return geoLocationObject;
 		} catch (Exception e) {
-			throw new UpdatedRuntimeException("This is an Exception caused by GeoLocation");
+			throw new UpdatedRuntimeException("Exception occured in getGeoLocation method : " + e.getLocalizedMessage(),
+					e);
 		}
 
 	}
@@ -52,7 +53,8 @@ public class DaoDemo {
 
 			return list;
 		} catch (Exception e) {
-			throw new UpdatedRuntimeException("This is an Exception caused by get method");
+			throw new UpdatedRuntimeException("Exception occured in get method : " + e.getLocalizedMessage(),
+					e);
 		}
 	}
 
@@ -78,7 +80,8 @@ public class DaoDemo {
 
 			return chargingStationObject;
 		} catch (Exception e) {
-			throw new UpdatedRuntimeException("This is an Exception caused by getStationDetails method.");
+			throw new UpdatedRuntimeException("Exception occured in getStationDetails method: " + e.getLocalizedMessage(),
+					e);
 		}
 	}
 

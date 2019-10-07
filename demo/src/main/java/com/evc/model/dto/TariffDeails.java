@@ -9,6 +9,16 @@ import java.io.Serializable;
  */
 public class TariffDeails implements Serializable{
 
+	public TariffDeails(Tariff memberTariff, Tariff nonMemberTariff) {
+		super();
+		this.memberTariff = memberTariff;
+		this.nonMemberTariff = nonMemberTariff;
+	}
+	
+	public TariffDeails() {
+		super();
+	}
+
 	private static final long serialVersionUID = 1L;
 	
 	/**

@@ -9,6 +9,16 @@ import java.io.Serializable;
 
 public class StationInfo implements Serializable {
 
+	public StationInfo(String name, String address) {
+		super();
+		this.name = name;
+		this.address = address;
+	}
+
+	public StationInfo() {
+		
+	}
+	
 	private static final long serialVersionUID = 1L;
 	
 	/**

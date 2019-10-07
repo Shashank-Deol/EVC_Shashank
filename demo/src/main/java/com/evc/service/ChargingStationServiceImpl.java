@@ -53,7 +53,8 @@ public class ChargingStationServiceImpl implements IChargingStationService {
 
 			}
 		} catch (Exception e) {
-			throw new UpdatedRuntimeException("This Exception is caused by 1st loop inside Service/getStationMethod.");
+			throw new UpdatedRuntimeException("Exception occured in getStations method : " + e.getLocalizedMessage(),
+					e);
 		}
 //		
 
@@ -67,8 +68,8 @@ public class ChargingStationServiceImpl implements IChargingStationService {
 				// returnList.add(list.get(i).getId(),
 				// Double.parseDouble(list.get(i).getLongitude()),Double.parseDouble(list.get(i).getLatitude()));
 			} catch (Exception e) {
-				throw new UpdatedRuntimeException(
-						"This Exception is caused by 2nd loop inside Service/getStationMethod.");
+				throw new UpdatedRuntimeException("Exception occured in getStations method : " + e.getLocalizedMessage(),
+						e);
 			}
 		}
 
@@ -78,7 +79,8 @@ public class ChargingStationServiceImpl implements IChargingStationService {
 
 			return returnList;
 		} catch (Exception e) {
-			throw new UpdatedRuntimeException("This exception is caused inside Service/getStationMethod");
+			throw new UpdatedRuntimeException("Exception occured in getStations method : " + e.getLocalizedMessage(),
+					e);
 		}
 	}
 
@@ -103,7 +105,8 @@ public class ChargingStationServiceImpl implements IChargingStationService {
 				return (dist);
 			}
 		} catch (Exception e) {
-			throw new UpdatedRuntimeException("This Exception is caused inside Service/calcDistance");
+			throw new UpdatedRuntimeException("Exception occured in calcDistance method : " + e.getLocalizedMessage(),
+					e);
 		}
 	}
 
@@ -157,7 +160,8 @@ public class ChargingStationServiceImpl implements IChargingStationService {
 			return response;
 			// TODO Auto-generated method stub
 		} catch (Exception e) {
-			throw new UpdatedRuntimeException("This exception is caused by Service/getStationDetails.");
+			throw new UpdatedRuntimeException("Exception occured in getStationDetails method : " + e.getLocalizedMessage(),
+					e);
 		}
 
 	}

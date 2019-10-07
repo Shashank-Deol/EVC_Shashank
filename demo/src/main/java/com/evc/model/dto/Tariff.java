@@ -14,6 +14,16 @@ public class Tariff implements Serializable{
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	public Tariff(String unit, double amount) {
+		super();
+		this.unit = unit;
+		this.amount = amount;
+	}
+	
+	public Tariff() {
+		
+	}
+
 	/**
 	 * Unit Details.
 	 */
