@@ -1,6 +1,6 @@
 package com.evc.controllertest;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -67,6 +67,7 @@ public class ChargingStationControllerTest {
 		final Stations expecStations = new Stations();
 		expecStations.setFeatures(listmock);
 		assertEquals(expecStations, result);
+		assertNotNull(result);
 	}
 
 	@Test
@@ -91,15 +92,21 @@ public class ChargingStationControllerTest {
 		
 		Mockito.when(chargingstationserviceimpl.getStationDetails(Mockito.anyString())).thenReturn(stationidresponse);
 		
-		final StationIdResponse result = chargingStationController.getStationDetails("102");
-		final StationIdResponse expecstationidresponse = new StationIdResponse();
-		expecstationidresponse.setDistance(10.0);
+		final StationIdResponse result = chargingStationController.getStationDetails(""+id);
+		//final StationIdResponse expecstationidresponse = new StationIdResponse();
+		final StationIdResponse expecstationidresponse = new StationIdResponse(stationinfo,distance_StationIdResponse,imagesource_StationIdResponse,features,tariffdetails,paymentOptions);
+		/*expecstationidresponse.setDistance(distance_StationIdResponse);
 		expecstationidresponse.setFeatures(features);
 		expecstationidresponse.setImage(imagesource_StationIdResponse);
 		expecstationidresponse.setPaymentOptions(paymentOptions);
 		expecstationidresponse.setStationInfo(stationinfo);
-		expecstationidresponse.setTariffDetails(tariffdetails);
+		expecstationidresponse.setTariffDetails(tariffdetails);*/
+
 		assertEquals(expecstationidresponse,result);
+		assertNotNull(result);
+		assertSame(stationidresponse,result);
+		//assertTrue(stationidresponse,result);
+		//assertEquals(expecstationidresponse,result);
 	}
 	/*
 	 * @Test public void shouldReturnAllTheStations() throws Exception {
