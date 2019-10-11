@@ -1,0 +1,19 @@
+package com.tricon.evc.enums;
+
+public enum Facilities {
+	CAFE,
+	MALL,
+	SUPERMARKET,
+	SPORT,
+	RECREATION_AREA,
+	NATURE,
+	MUSEUM,
+	BUS_STOP,
+	TAXI_STAND,
+	TRAIN_STATION,
+	AIRPORT,
+	CARPOOL_PARKING,
+	FUEL_STATION,
+	WIFI;
+
+}
