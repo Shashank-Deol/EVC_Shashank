@@ -1,3 +1,6 @@
+/**
+ * All the Enums are declared here.
+ */
 package com.tricon.evc.enums;
 
 /**

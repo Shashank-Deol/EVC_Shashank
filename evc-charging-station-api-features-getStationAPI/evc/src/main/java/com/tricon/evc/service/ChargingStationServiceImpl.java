@@ -1,18 +1,5 @@
 package com.tricon.evc.service;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.tricon.evc.constants.ChargingStationConstants;
 import com.tricon.evc.constants.MapBoxConstants;
 import com.tricon.evc.dao.IChargingStationDao;
@@ -20,16 +7,16 @@ import com.tricon.evc.dao.IEvseDao;
 import com.tricon.evc.dao.IStatusScheduleDao;
 import com.tricon.evc.model.ChargingStation;
 import com.tricon.evc.model.StatusSchedule;
-import com.tricon.evc.model.dto.FilterValues;
-import com.tricon.evc.model.dto.Geometry;
 import com.tricon.evc.model.dto.Properties;
-import com.tricon.evc.model.dto.Station;
-import com.tricon.evc.model.dto.StationIdResponse;
-import com.tricon.evc.model.dto.StationInfo;
-import com.tricon.evc.model.dto.Tariff;
-import com.tricon.evc.model.dto.TariffDeails;
+import com.tricon.evc.model.dto.*;
 import com.tricon.evc.responsemodel.CustomResponse;
 import com.tricon.evc.responsemodel.Stations;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 /**
@@ -62,9 +49,10 @@ public class ChargingStationServiceImpl implements IChargingStationService {
     private IStatusScheduleDao statusSchedluleDaoObject;
 
     /**
-     * @return
+     * @return Returns CustomResponse object containing stations inside it.
+     * * @param filterValues Contains the request body values as an object with values stored inside .
      */
-    public CustomResponse getStations(final FilterValues filterValues) {
+    public CustomResponse getStations(FilterValues filterValues) {
 
         double distance = 0;
 
@@ -124,7 +112,6 @@ public class ChargingStationServiceImpl implements IChargingStationService {
          * this loop is for filter of availability
          */
         for (int i = 0; i < chargingStationList.size(); i++) {
-
         }
 
         /**
@@ -160,7 +147,8 @@ public class ChargingStationServiceImpl implements IChargingStationService {
         /**
          * setting charging stations to dto objects
          */
-        for (int i = 0; i < chargingStationList.size(); i++) {
+        for (
+                int i = 0; i < chargingStationList.size(); i++) {
 
 //            double[] coordinates = new double[2];
 //            coordinates[0] = Double.parseDouble(chargingStationList.get(i)
@@ -262,11 +250,11 @@ public class ChargingStationServiceImpl implements IChargingStationService {
     /**
      * Calc distance.
      *
-     * @param startingLatitude
-     * @param startingLongitude
-     * @param endingLatitude
-     * @param endingLongitude
-     * @param unit              the unit
+     * @param startingLatitude  The Start Point Latitude.
+     * @param startingLongitude The Start Point longitude.
+     * @param endingLatitude    The End Point Latitude.
+     * @param endingLongitude   The End Point Longitude.
+     * @param unit              The unit .
      * @return the double
      */
     private static double calculateDistance(

@@ -1,3 +1,6 @@
+/**
+ * This package consists of controller .
+ */
 package com.tricon.evc.controller;
 
 import org.apache.log4j.Logger;
@@ -30,7 +33,7 @@ public class ChargingStationController {
 
   /**
    * Gets the stations.
-   * @param filterValues
+   * @param filterValues contains request body .
    * *
    * @return {@link CustomResponse}
    */

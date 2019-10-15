@@ -3,7 +3,7 @@ package com.tricon.evc.constants;
 /**
  * The Class ChargingStationConstants.
  */
-public class ChargingStationConstants {
+public final class ChargingStationConstants {
 
     /**
      * The Constant connectorTypes.
@@ -29,24 +29,24 @@ public class ChargingStationConstants {
      */
     public static final String UNIT_PWD = "pwd";
     /**
-     * image url
+     * image url.
      */
     @SuppressWarnings("checkstyle:WhitespaceAround")
     public static final String IMAGE_URL = "dummy-image-to-be-updated";
     /**
-     * unit for distance in km
+     * unit for distance in km.
      */
     public static final String KILOMETER = "km";
     /**
-     * unit for distance as miles
+     * unit for distance as miles.
      */
     public static final String MILES = "miles";
     /**
-     * one minute in milli seconds
+     * one minute in milli seconds.
      */
     public static final long ONE_MINUTE_IN_MILLIS = 60000;
     /**
-     * date format
+     * date format.
      */
     public static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 }
